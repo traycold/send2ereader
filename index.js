@@ -16,7 +16,7 @@ const FileType = require('file-type')
 const { transliterate } = require('transliteration')
 const sanitize = require('sanitize-filename')
 
-const port = 3001
+const port = 32001
 const expireDelay = 30  // 30 seconds
 const maxExpireDuration = 1 * 60 * 60  // 1 hour
 const maxFileSize = 1024 * 1024 * 800  // 800 MB
@@ -586,7 +586,7 @@ fs.rm('uploads', {recursive: true}, (err) => {
       console.log("check continue!")
       fn(req, res)
     })
-    server.listen(port)
+    server.listen(port,'127.0.0.1')
     console.log('server is listening on port ' + port)
   })
 })
